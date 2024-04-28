@@ -14,10 +14,9 @@ function Label({ title }) {
 function TbRow({
     label,
     children,
-    key,
 }) {
     return (
-        <tr className="border-b text-base text-pColor" key={key}>
+        <tr className="border-b text-base text-pColor">
             <td className="pt-5 pb-2">
                 <p className="capitalize font-normal">{label}</p>
             </td>
