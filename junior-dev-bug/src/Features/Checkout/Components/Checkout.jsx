@@ -1,10 +1,10 @@
-import React from 'react'
-import { useForm } from 'react-hook-form';
-import { useGlobalCtx } from '../../../Contexts/GlobalProvider';
-import Contact from './Contact'
-import Order from './Order'
+import React from "react";
+import { useForm } from "react-hook-form";
+import { useGlobalCtx } from "../../../Contexts/GlobalProvider";
+import Contact from "./Contact";
+import Order from "./Order";
 
-export function Checkout() {
+export default function Checkout() {
     const { register, handleSubmit } = useForm();
     const { getPayment } = useGlobalCtx();
     const onSubmit = (data) => getPayment(data);
@@ -19,5 +19,5 @@ export function Checkout() {
                 </div>
             </div>
         </form>
-    )
+    );
 }
