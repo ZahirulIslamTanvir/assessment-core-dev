@@ -55,7 +55,7 @@ export default function Contact({ register,errors }) {
                     <Label title="Address" />
                     <Input placeholder="Enter your address" name="address" register={{ ...register('address',{required:true}) }} />
                     {errors.address && errors.address.type ==="required" && (<p className='text-red-800'>
-                            Please enter your last address
+                            Please enter your address
                     </p>)}
                 </div>
                 <div className="flex space-x-3.5">
