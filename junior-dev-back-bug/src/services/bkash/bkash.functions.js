@@ -94,13 +94,14 @@ class BaseClass {
     merchantInvoiceNumber,
     agreementID,
     baseURL,
+    token,
   }) {
     try {
       let url = this.baseUrl + '/create';
       let data = {
         agreementID: agreementID,
         mode: mode,
-        payerReference: this.payerReference,
+        payerReference: "Reference",
         callbackURL: baseURL,
         merchantAssociationInfo: merchantAssociationInfo,
         amount: amount,
@@ -108,7 +109,7 @@ class BaseClass {
         intent: 'sale',
         merchantInvoiceNumber: merchantInvoiceNumber,
       };
-      let headers = { Authorization: this.token, 'X-APP-Key': this.appKey };
+      let headers = { Authorization: token, 'X-APP-Key': this.appKey };
       return await fetch({ method: 'POST', url, headers, data });
     } catch (error) {
       throw new Error(error.message);
@@ -119,7 +120,7 @@ class BaseClass {
     try {
       let url = this.baseUrl + '/execute';
       let data = { paymentID: paymentID };
-      let headers = { Authorization: this.token, 'X-APP-Key': this.appKey };
+      let headers = { Authorization: token, 'X-APP-Key':appKey };
       return await fetch({ method: 'POST', url, headers, data });
     } catch (error) {
       throw new Error(error.message);
