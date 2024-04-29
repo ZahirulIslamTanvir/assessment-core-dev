@@ -5,16 +5,17 @@ import Contact from "./Contact";
 import Order from "./Order";
 
 export default function Checkout() {
-    const { register, handleSubmit } = useForm();
-    const { getPayment } = useGlobalCtx();
+    const { register, handleSubmit,formState:{errors} } = useForm();
+    const { getPayment,totalPrice } = useGlobalCtx();
     const onSubmit = (data) =>{
-        console.log("form data",register());
+        console.log(totalPrice);
+        console.log("form data",data);
         return getPayment(data)};
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <div className="grid grid-cols-12 gap-x-8 py-12">
                 <div className="col-span-7 ">
-                    <Contact register={register} />
+                    <Contact register={register} errors={errors}/>
                 </div>
                 <div className="col-span-5 ">
                     <Order />
