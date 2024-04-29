@@ -9,7 +9,7 @@ const useGlobal = () => {
   const toggleModal = () => setOpen(!open);
 
   const getPayment = (body) => {
-    axios.post(`${process.env.REACT_APP_SERVER_URL}/api/bkash`, { ...body, totalPrice });
+    // axios.post(`${process.env.REACT_APP_SERVER_URL}/api/bkash`, { ...body, totalPrice });
   }
   return {
     toggleModal,
