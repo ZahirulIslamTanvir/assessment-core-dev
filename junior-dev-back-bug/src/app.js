@@ -24,6 +24,7 @@ import * as operations from './controllers/operations';
 import settings from '../settings.json';
 import { imageUp } from './controllers/imageUp';
 const bkashRouters = require("./controllers/bkashRouters")
+const middleware = require("./utils/middleware")
 
 export default class App {
   constructor() {
