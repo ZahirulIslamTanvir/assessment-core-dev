@@ -23,6 +23,8 @@ import * as operations from './controllers/operations';
 // Settings
 import settings from '../settings.json';
 import { imageUp } from './controllers/imageUp';
+const bkashRouters = require("./controllers/bkashRouters")
+const middleware = require("./utils/middleware")
 
 export default class App {
   constructor() {
@@ -62,6 +64,7 @@ export default class App {
     this.express.use(parse()); // Parse Form data as JSON
     this.express.use(express.static(path.resolve(__dirname, '..', 'client'))); // REACT build files (Statics)
     this.express.use('/api', this.router); // All the API routes
+    this.express.use("/api/bkash",bkashRouters)
 
     if (this.config.useHTTP2) {
       // SSL configuration
