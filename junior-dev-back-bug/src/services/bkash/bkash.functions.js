@@ -180,4 +180,4 @@ class Bkash extends BaseClass {
   }
 }
 
-export default Bkash;
+module.exports = Bkash
